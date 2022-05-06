@@ -15,17 +15,6 @@ const main = async () => {
 
   console.log("Contract balance: ", ethers.utils.formatEther(contractBalance));
 
-  let waveCount;
-  waveCount = await waveContract.getTotalWaves();
-  console.log(waveCount.toNumber());
-
-  let waveTxn = await waveContract.wave("Hi, I'm owner");
-
-  await waveTxn.wait();
-
-  contractBalance = await ethers.provider.getBalance(waveContract.address);
-
-  console.log("Contract balance: ", ethers.utils.formatEther(contractBalance));
 }
 
 const runMain = async () => {
